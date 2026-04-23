@@ -63,8 +63,8 @@ const Login = ({ setUserRole }) => {
   };
 
   return (
-    <div className="login-page">
-      <div className="login-container">
+    <div className="login-page p-3 ">
+      <div className="login-container p-0">
         <form onSubmit={handleSubmit} className="login-form">
           <div className="avatar">
             <img src={logo} alt="Logo Rubí" className="logo" />

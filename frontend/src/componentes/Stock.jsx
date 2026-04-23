@@ -38,46 +38,48 @@ const Stock = () => {
     <div className="stock-container container mt-4">
       <h2 className="stock-title">Inventario de Stock</h2>
       <div className="table-container">
-        <table className="table table-striped">
-          <thead>
-            <tr>
-              <th>Código</th>
-              <th>Detalles</th>
-              <th>P. Venta</th>
-              <th>Stock</th>
-              <th>Estado</th>
-            </tr>
-          </thead>
-          <tbody>
-            {stock.length > 0 ? (
-              stock.map((s, index) => (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{s.CodigoProducto}</td>
-                  <td>{s.DetallesProducto || "Sin detalles"}</td>
-                  <td>${Number(String(s.PrecioVenta).replace(/,/g, "")).toFixed(2)}</td>
-                  <td>{s.Cantidad}</td>
-                  <td>
-                    <span
-                      className="estado-circle"
-                      style={{
-                        backgroundColor: getStockStatus(s.Cantidad),
-                        width: "20px",
-                        height: "20px",
-                        display: "inline-block",
-                        borderRadius: "50%",
-                      }}
-                    ></span>
-                  </td>
-                </tr>
-              ))
-            ) : (
+        <div className="table-responsive">
+          <table className="table table-striped">
+            <thead>
               <tr>
-                <td colSpan="5">No hay productos en stock.</td>
+                <th>Código</th>
+                <th>Detalles</th>
+                <th>P. Venta</th>
+                <th>Stock</th>
+                <th>Estado</th>
               </tr>
-            )}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {stock.length > 0 ? (
+                stock.map((s, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{s.CodigoProducto}</td>
+                    <td>{s.DetallesProducto || "Sin detalles"}</td>
+                    <td>${Number(String(s.PrecioVenta).replace(/,/g, "")).toFixed(2)}</td>
+                    <td>{s.Cantidad}</td>
+                    <td>
+                      <span
+                        className="estado-circle"
+                        style={{
+                          backgroundColor: getStockStatus(s.Cantidad),
+                          width: "20px",
+                          height: "20px",
+                          display: "inline-block",
+                          borderRadius: "50%",
+                        }}
+                      ></span>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="5">No hay productos en stock.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

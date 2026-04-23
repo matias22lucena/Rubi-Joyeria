@@ -154,4 +154,14 @@
     .acciones {
       flex-direction: column;
     }
+
+    .acciones input {
+      min-width: 0;
+      width: 100%;
+    }
+
+    .tabla {
+      min-width: 0;
+      width: 100%;
+    }
   }

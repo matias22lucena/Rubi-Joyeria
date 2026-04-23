@@ -21,3 +21,14 @@
 .btn-success {
     float: right;
 }
+
+@media (max-width: 768px) {
+  .compras-container {
+    padding: 12px;
+  }
+
+  /* Evita problemas de float en encabezados en pantallas chicas */
+  .btn-success {
+    float: none;
+  }
+}

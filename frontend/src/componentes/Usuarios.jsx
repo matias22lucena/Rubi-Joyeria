@@ -247,48 +247,50 @@ const Usuarios = () => {
         </div>
       ) : (
         <div>
-          <table className="table table-hover shadow-sm rounded">
-            <thead className="table-light">
-              <tr>
-                <th>Nombre</th>
-                <th>Correo</th>
-                <th>Rol</th>
-                {userRole === "1" && <th>Acciones</th>}
-              </tr>
-            </thead>
-            <tbody>
-              {usuarios.map((usuario) => (
-                <tr key={usuario.IDUsuario} className="align-middle">
-                  <td className="d-flex align-items-center">
-                    <span className="avatar me-2">{usuario.Nombre.charAt(0)}</span>
-                    {usuario.Nombre}
-                  </td>
-                  <td>{usuario.Correo}</td>
-                  <td>
-                    <span className={`badge ${usuario.IDRol === 1 ? "bg-primary" : "bg-secondary"}`}>
-                      {usuario.IDRol === 1 ? "ADMIN" : "USER"}
-                    </span>
-                  </td>
-                  {userRole === "1" && (
-                    <td>
-                      <button
-                        className="btn btn-sm btn-outline-primary me-2"
-                        onClick={() => iniciarEdicion(usuario)}
-                      >
-                        <FontAwesomeIcon icon={faEdit} />
-                      </button>
-                      <button
-                        className="btn btn-sm btn-outline-danger"
-                        onClick={() => handleDeleteUser(usuario.IDUsuario)}
-                      >
-                        <FontAwesomeIcon icon={faTrash} />
-                      </button>
-                    </td>
-                  )}
+          <div className="table-responsive">
+            <table className="table table-hover shadow-sm rounded">
+              <thead className="table-light">
+                <tr>
+                  <th>Nombre</th>
+                  <th>Correo</th>
+                  <th>Rol</th>
+                  {userRole === "1" && <th>Acciones</th>}
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {usuarios.map((usuario) => (
+                  <tr key={usuario.IDUsuario} className="align-middle">
+                    <td className="d-flex align-items-center">
+                      <span className="avatar me-2">{usuario.Nombre.charAt(0)}</span>
+                      {usuario.Nombre}
+                    </td>
+                    <td>{usuario.Correo}</td>
+                    <td>
+                      <span className={`badge ${usuario.IDRol === 1 ? "bg-primary" : "bg-secondary"}`}>
+                        {usuario.IDRol === 1 ? "ADMIN" : "USER"}
+                      </span>
+                    </td>
+                    {userRole === "1" && (
+                      <td>
+                        <button
+                          className="btn btn-sm btn-outline-primary me-2"
+                          onClick={() => iniciarEdicion(usuario)}
+                        >
+                          <FontAwesomeIcon icon={faEdit} />
+                        </button>
+                        <button
+                          className="btn btn-sm btn-outline-danger"
+                          onClick={() => handleDeleteUser(usuario.IDUsuario)}
+                        >
+                          <FontAwesomeIcon icon={faTrash} />
+                        </button>
+                      </td>
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
 

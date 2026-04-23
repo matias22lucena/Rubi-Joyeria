@@ -183,36 +183,38 @@ const Compras = () => {
                 </div>
             ) : (
                 <div className="table-container">
-                    <table className="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Fecha</th>
-                                <th>Proveedor</th>
-                                <th>Código Producto</th>
-                                <th>Cantidad</th>
-                                <th>Detalles</th>
-                                <th>Precio Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {compras.length > 0 ? (
-                                compras.map((c, index) => (
-                                    <tr key={index}>
-                                        <td>{new Date(c.Fecha).toLocaleDateString()}</td>
-                                        <td>{c.NombreProveedor}</td>
-                                        <td>{c.CodigoProducto}</td>
-                                        <td>{c.Cantidad}</td>
-                                        <td>{c.DetallesProducto || "Sin detalles"}</td>
-                                        <td>${parseFloat(c.PrecioTotal).toFixed(2)}</td>
-                                    </tr>
-                                ))
-                            ) : (
+                    <div className="table-responsive">
+                        <table className="table table-striped">
+                            <thead>
                                 <tr>
-                                    <td colSpan="7">No hay compras registradas.</td>
+                                    <th>Fecha</th>
+                                    <th>Proveedor</th>
+                                    <th>Código Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Detalles</th>
+                                    <th>Precio Total</th>
                                 </tr>
-                            )}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {compras.length > 0 ? (
+                                    compras.map((c, index) => (
+                                        <tr key={index}>
+                                            <td>{new Date(c.Fecha).toLocaleDateString()}</td>
+                                            <td>{c.NombreProveedor}</td>
+                                            <td>{c.CodigoProducto}</td>
+                                            <td>{c.Cantidad}</td>
+                                            <td>{c.DetallesProducto || "Sin detalles"}</td>
+                                            <td>${parseFloat(c.PrecioTotal).toFixed(2)}</td>
+                                        </tr>
+                                    ))
+                                ) : (
+                                    <tr>
+                                        <td colSpan="7">No hay compras registradas.</td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             )}
         </div>

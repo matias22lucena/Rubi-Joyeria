@@ -1,6 +1,7 @@
-body {
+/* Importante: no estilizar el body global para no romper otras pantallas */
+.login-page {
   font-family: 'Montserrat' !important;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;

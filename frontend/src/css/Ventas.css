@@ -17,7 +17,8 @@
 }
 
 .busqueda-input {
-  min-width: 600px;
+  width: 100%;
+  min-width: 0;
   font-size: 16px;
   padding: 12px;
 }
@@ -52,7 +53,8 @@
 }
 
 .input-busqueda {
-  min-width: 1000px !important;
+  width: 100% !important;
+  min-width: 0 !important;
   font-size: 16px !important;
   padding: 12px !important;
   flex: 1 !important;
@@ -65,4 +67,14 @@
 }
 .letra-pago{
   color: rgb(6, 6, 6);
+}
+
+@media (max-width: 768px) {
+  .ventas-container {
+    padding: 1rem;
+  }
+
+  .ventas-container h2 {
+    margin-bottom: 1.25rem;
+  }
 }

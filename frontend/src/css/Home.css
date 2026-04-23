@@ -152,6 +152,14 @@ body {
   min-height: calc(100vh - 64px);
 }
 
+/* Home.jsx usa main-content (no .content) */
+.main-content {
+  flex: 1;
+  margin-left: 280px;
+  padding-top: 64px; /* deja espacio para el header fijo */
+  min-height: 100vh;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .sidebar {
@@ -176,7 +184,8 @@ body {
       left: 72px;
   }
 
-  .content {
+  .content,
+  .main-content {
       margin-left: 72px;
   }
 }
@@ -331,8 +340,9 @@ color: white;
 background-color: #a71d2a;
 }
 
+/* Home ya maneja sidebar/márgenes internamente */
 .page-container .home-container{
-  margin-left: 250px;
+  margin-left: 0;
 }
 .custom-btn {
   background-color: #526D82 !important;

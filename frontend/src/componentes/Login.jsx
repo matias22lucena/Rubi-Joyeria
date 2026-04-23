@@ -63,33 +63,35 @@ const Login = ({ setUserRole }) => {
   };
 
   return (
-    <div className="login-container">
-      <form onSubmit={handleSubmit} className="login-form">
-        <div className="avatar">
-          <img src={logo} alt="Logo Rubí" className="logo" />
-        </div>
-        <h2 className="login-titulo">Iniciar Sesión</h2>
+    <div className="login-page">
+      <div className="login-container">
+        <form onSubmit={handleSubmit} className="login-form">
+          <div className="avatar">
+            <img src={logo} alt="Logo Rubí" className="logo" />
+          </div>
+          <h2 className="login-titulo">Iniciar Sesión</h2>
 
-        <input
-          type="email"
-          placeholder="Correo"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+          <input
+            type="email"
+            placeholder="Correo"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        <button type="submit" className="login-button" disabled={loading}>
-          {loading ? "Cargando..." : "Iniciar Sesión"}
-        </button>
-      </form>
+          <button type="submit" className="login-button" disabled={loading}>
+            {loading ? "Cargando..." : "Iniciar Sesión"}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

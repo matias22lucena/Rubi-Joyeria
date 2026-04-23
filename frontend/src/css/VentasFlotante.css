@@ -114,6 +114,23 @@
     overflow-y: auto;
 }
 
+@media (max-width: 768px) {
+  .pantalla-completa {
+    padding: 1rem;
+  }
+
+  .fab-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+  }
+
+  .fab-option span {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+}
+
 /* Botón flotante personalizable */
 .fab-btn {
     background-color: var(--fab-color, #007bff) !important;

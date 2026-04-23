@@ -190,36 +190,38 @@ const Proveedores = () => {
                 </div>
             ) : (
                 <>
-                    <table className="table table-striped mt-4">
-                        <thead>
-                            <tr>
-                                <th>Codigo Proveedores</th>
-                                <th>Nombre</th>
-                                <th>Direccion</th>
-                                <th>Telefono</th>
-                                <th>Tipo</th>
-                                <th>Codigos</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {proveedores.map((prov) => (
-                                <tr key={prov.IDProveedor}>
-                                    <td>{prov.CodigoProveedor}</td>
-                                    <td>{prov.Nombre}</td>
-                                    <td>{prov.Direccion}</td>
-                                    <td>{prov.Telefono}</td>
-                                    <td>{prov.TipoProveedor}</td>
-                                    <td>{prov.CodigosProductos}</td>
-                                    <td>
-                                        <button className="btn btn-editar me-2" onClick={() => iniciarEdicion(prov)}>Editar</button>
-                                        <button className="btn btn-eliminar" onClick={() => handleDelete(prov.IDProveedor)}>Eliminar</button>
-                                    </td>
+                    <div className="table-responsive">
+                        <table className="table table-striped mt-4">
+                            <thead>
+                                <tr>
+                                    <th>Codigo Proveedores</th>
+                                    <th>Nombre</th>
+                                    <th>Direccion</th>
+                                    <th>Telefono</th>
+                                    <th>Tipo</th>
+                                    <th>Codigos</th>
+                                    <th>Acciones</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                    <button className="fab-button" onClick={() => setMostrarFormulario(true)}>+</button>
+                            </thead>
+                            <tbody>
+                                {proveedores.map((prov) => (
+                                    <tr key={prov.IDProveedor}>
+                                        <td>{prov.CodigoProveedor}</td>
+                                        <td>{prov.Nombre}</td>
+                                        <td>{prov.Direccion}</td>
+                                        <td>{prov.Telefono}</td>
+                                        <td>{prov.TipoProveedor}</td>
+                                        <td>{prov.CodigosProductos}</td>
+                                        <td>
+                                            <button className="btn btn-editar me-2" onClick={() => iniciarEdicion(prov)}>Editar</button>
+                                            <button className="btn btn-eliminar" onClick={() => handleDelete(prov.IDProveedor)}>Eliminar</button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                    <button className="proveedores-fab-button" onClick={() => setMostrarFormulario(true)}>+</button>
                 </>
             )}
         </div>

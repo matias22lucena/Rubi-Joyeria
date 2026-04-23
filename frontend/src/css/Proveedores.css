@@ -6,12 +6,12 @@
 }
 
 /* 📌 Tabla */
-.table {
+#proveedores-container .table {
     border-radius: 8px;
     overflow: hidden;
 }
 
-.table th {
+#proveedores-container .table th {
     background-color: #f8f9fa;
     text-align: left;
 }
@@ -27,7 +27,7 @@
 }
 
 /* 📌 Botón flotante */
-.fab-button {
+.proveedores-fab-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -47,7 +47,7 @@
     z-index: 1000;
 }
 
-.fab-button:hover {
+.proveedores-fab-button:hover {
     background-color: #DDE6ED;
 }
 /* 📌 Ajustar el tamaño del formulario */
@@ -112,4 +112,20 @@
 }
 .proveedores-titulo {
     color: #080808;
+}
+
+@media (max-width: 768px) {
+  #proveedores-container {
+    padding: 12px;
+  }
+
+  .proveedores-form {
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .proveedores-form .form-control {
+    height: auto;
+    font-size: 16px;
+  }
 }

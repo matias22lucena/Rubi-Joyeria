@@ -33,7 +33,7 @@ margin: 0 auto;
 /* Hacer la tabla más ancha y con más altura */
 #usuarios-container .table {
 width: 100%;
-min-width: 1100px;
+min-width: 0;
 height: auto; /* Ajusta la altura dinámicamente */
 border-collapse: collapse; /* Asegura que las líneas sean uniformes */
 }
@@ -126,4 +126,11 @@ font-size: 28px;
 }
 .usuarios-titulo {
   color: #030303;
+}
+
+@media (min-width: 992px) {
+  /* En escritorio, mantenemos el ancho amplio como estaba */
+  #usuarios-container .table {
+    min-width: 1100px;
+  }
 }

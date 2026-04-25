@@ -25,27 +25,31 @@ const App = () => {
 
 const MainContent = ({ userRole, setUserRole }) => {
     const location = useLocation();
-    const showNavbar = location.pathname !== "/" && location.pathname !== "/login" && location.pathname !== "/home"; 
+
+    const showNavbar =
+        location.pathname !== "/" &&
+        location.pathname !== "/login" &&
+        location.pathname !== "/home";
 
     return (
         <div>
-            {showNavbar && <NavigationBar userRole={userRole} setUserRole={setUserRole} />}
-            <div className="page-container"> {/* Contenedor general del contenido */}
-            <Routes>
-    <Route path="/" element={<Login setUserRole={setUserRole} />} />
-    <Route path="/login" element={<Login setUserRole={setUserRole} />} />
-    <Route path="/home" element={<Home />} />
-    <Route path="/usuarios" element={<Usuarios />} />
-    <Route path="/proveedores" element={<Proveedores />} />
-    <Route path="/compras" element={<Compras />} />
-    <Route path="/stock" element={<Stock />} />
-    <Route path="/ventas" element={<Ventas />} /> {/* ✅ Ruta correcta */}
-    <Route path="/reportes" element={<Reportes />} /> {/* ✅ Ruta correcta */}
-    <Route path="/caja" element={<Caja />} /> {/* ✅ Ruta correcta */}
+            {showNavbar && (
+                <NavigationBar userRole={userRole} setUserRole={setUserRole} />
+            )}
 
-
-</Routes>
-
+            <div className={showNavbar ? "page-container" : "page-container-no-navbar"}>
+                <Routes>
+                    <Route path="/" element={<Login setUserRole={setUserRole} />} />
+                    <Route path="/login" element={<Login setUserRole={setUserRole} />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/usuarios" element={<Usuarios />} />
+                    <Route path="/proveedores" element={<Proveedores />} />
+                    <Route path="/compras" element={<Compras />} />
+                    <Route path="/stock" element={<Stock />} />
+                    <Route path="/ventas" element={<Ventas />} />
+                    <Route path="/reportes" element={<Reportes />} />
+                    <Route path="/caja" element={<Caja />} />
+                </Routes>
             </div>
         </div>
     );

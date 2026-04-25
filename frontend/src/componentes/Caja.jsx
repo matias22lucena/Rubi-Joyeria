@@ -98,7 +98,7 @@ const Caja = () => {
   };
 
   return (
-    <div className="caja-container">
+    <div className="caja-container ">
       <div className="resumen-boxes">
         <div className="box ingreso">
           <h4>${totalIngresos.toLocaleString()}</h4>
